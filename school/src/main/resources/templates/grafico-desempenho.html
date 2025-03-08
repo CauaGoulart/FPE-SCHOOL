@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desempenho dos Alunos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Distribuição de Desempenho dos Alunos</h1>
+
+    <!-- 🔹 Seleção de Matéria -->
+    <form method="get" action="/graficos/desempenho">
+        <label for="materia">Escolha a Matéria:</label>
+        <select id="materia" name="materia" onchange="this.form.submit()">
+            <option value="">Selecione uma matéria</option>
+            <option th:each="materia : ${materias}" th:value="${materia}" th:text="${materia}"
+                    th:selected="${materia == materiaSelecionada}"></option>
+        </select>
+    </form>
+
+    <!-- 🔹 Exibir Mensagem Caso Não Tenha Notas -->
+    <th:block th:if="${mediasPorAluno.isEmpty()}">
+        <p class="info-message">Nenhum aluno encontrado para essa matéria.</p>
+    </th:block>
+
+    <!-- 🔹 Tabela de Notas com Média e Letra -->
+    <div class="table-container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Aluno</th>
+                <th>Média das Notas</th>
+                <th>Classificação</th> <!-- Letra da Nota -->
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="entry : ${mediasPorAluno}">
+                <td th:text="${entry.key}"></td> <!-- Nome do Aluno -->
+                <td th:text="${#numbers.formatDecimal(entry.value, 1, 2)}"></td> <!-- Média -->
+                <td th:text="${@notaUtils.converterParaLetra(entry.value)}"></td> <!-- Letra da Nota -->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="button-group">
+        <a href="/"><button class="btn-secondary">Voltar</button></a>
+    </div>
+</div>
+
+</body>
+</html>

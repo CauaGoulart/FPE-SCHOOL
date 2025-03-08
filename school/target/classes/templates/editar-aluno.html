@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Aluno</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Editar Aluno</h1>
+
+    <form action="/alunos/atualizar" method="post">
+        <input type="hidden" name="id" th:value="${aluno.id}">
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" th:value="${aluno.nome}" required>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" th:value="${aluno.idade}" required>
+
+        <label for="genero">Gênero:</label>
+        <input type="text" id="genero" name="genero" th:value="${aluno.genero}" required>
+
+        <label for="altura">Altura:</label>
+        <input type="number" step="0.01" id="altura" name="altura" th:value="${aluno.altura}" required>
+
+        <label for="entidade">Entidade:</label>
+        <input type="text" id="entidade" name="entidade" th:value="${aluno.entidade}" required>
+
+        <label for="talentos">Talentos (separados por vírgula):</label>
+        <input type="text" id="talentos" name="talentos" th:value="${#strings.arrayJoin(aluno.talentos, ', ')}">
+
+        <label for="habilidades">Habilidades (separadas por vírgula):</label>
+        <input type="text" id="habilidades" name="habilidades" th:value="${#strings.arrayJoin(aluno.habilidades, ', ')}">
+
+        <button type="submit" class="btn">Atualizar</button>
+    </form>
+
+    <a href="/alunos/listar"><button class="btn-secondary">Cancelar</button></a>
+</div>
+
+</body>
+</html>

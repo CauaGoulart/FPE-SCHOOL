@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Grades</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<h1>Grades of <span th:text="${aluno.nome}"></span></h1>
+
+<!-- Message if the student has no grades -->
+<th:block th:if="${notas.isEmpty()}">
+    <p class="info-message">No grades recorded.</p>
+</th:block>
+
+<!-- Grades Table -->
+<div class="table-container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Grade</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="nota : ${notas}">
+            <td th:text="${nota.materia}"></td>
+            <td th:text="${nota.nota}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Buttons -->
+<div class="button-group">
+    <a href="/notas/selecionar"><button class="btn">Select Another Student</button></a>
+    <a href="/"><button class="btn-secondary">Back</button></a>
+</div>
+
+</body>
+</html>

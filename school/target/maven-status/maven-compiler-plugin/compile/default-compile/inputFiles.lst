@@ -1,0 +1,15 @@
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\config\SecurityConfig.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\controllers\AlunoController.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\controllers\HomeController.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\controllers\NotaController.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\controllers\ProfessorController.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\entities\Aluno.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\entities\Nota.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\entities\Professor.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\repositories\AlunoRepository.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\repositories\NotaRepository.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\repositories\ProfessorRepository.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\SchoolApplication.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\services\AlunoService.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\services\NotaService.java
+C:\Users\Usuario\Desktop\school\src\main\java\com\fpe\school\services\ProfessorService.java

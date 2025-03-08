@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPE School</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<!-- 🔹 Fixed navigation menu at the top -->
+<header>
+    <div class="logo">
+        <img src="/img/escola-logo.png" alt="School Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Students ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/cadastro-aluno">Register Student</a></li>
+                    <li><a href="/alunos/listar">List Students</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Teachers ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/cadastro-professor">Register Teacher</a></li>
+                    <li><a href="/professores/listar">List Teachers</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Grades ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/notas/cadastro-nota">Record Grade</a></li>
+                    <li><a href="/notas/selecionar">View Grades</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Attendance ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/presencas/registrar">Register Attendance</a></li>
+                </ul>
+            </li>
+            <li><a href="/contato">Contact</a></li>
+            <li style="opacity: 0.3;"><a href="/alice">Room 11</a></li>
+            <li><a href="/graficos/desempenho">Performance</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- 🔹 Main banner with image and text -->
+<section class="escola">
+    <img src="/img/escola.png" alt="School Image">
+    <div class="hero-text">
+        <h1>Welcome to FPE School</h1>
+        <p>An institution of excellence in education.</p>
+    </div>
+</section>
+
+</body>
+</html>

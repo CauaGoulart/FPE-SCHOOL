@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Professor</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Editar Professor</h1>
+
+    <form action="/professores/atualizar" method="post">
+        <input type="hidden" name="id" th:value="${professor.id}">
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" th:value="${professor.nome}" required>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" th:value="${professor.idade}" required>
+
+        <label for="genero">Gênero:</label>
+        <input type="text" id="genero" name="genero" th:value="${professor.genero}" required>
+
+        <label for="altura">Altura:</label>
+        <input type="number" step="0.01" id="altura" name="altura" th:value="${professor.altura}" required>
+
+        <label for="entidade">Entidade:</label>
+        <input type="text" id="entidade" name="entidade" th:value="${professor.entidade}" required>
+
+        <label for="materia">Matéria:</label>
+        <input type="text" id="materia" name="materia" th:value="${professor.materia}" required>
+
+        <label for="eficiencia">Eficiência (separadas por vírgula):</label>
+        <input type="text" id="eficiencia" name="eficiencia" th:value="${#strings.arrayJoin(professor.eficiencia, ', ')}">
+
+        <label for="habilidades">Habilidades (separadas por vírgula):</label>
+        <input type="text" id="habilidades" name="habilidades" th:value="${#strings.arrayJoin(professor.habilidades, ', ')}">
+
+        <button type="submit" class="btn">Atualizar</button>
+    </form>
+
+    <a href="/professores/listar"><button class="btn-secondary">Cancelar</button></a>
+</div>
+
+</body>
+</html>

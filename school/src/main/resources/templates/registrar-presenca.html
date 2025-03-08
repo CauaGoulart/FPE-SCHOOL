@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Attendance</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Register Attendance</h1>
+
+    <div class="error-message" th:if="${param.erro}">
+        <p>Error: Student or teacher not found!</p>
+    </div>
+
+    <div id="success-message" class="success-message" th:if="${param.sucesso}">
+        <p>Attendance successfully recorded!</p>
+    </div>
+
+    <form action="/presencas/salvar" method="post">
+        <label for="alunoId">Student:</label>
+        <select id="alunoId" name="alunoId" required>
+            <option value="">Select a student</option>
+            <option th:each="aluno : ${alunos}" th:value="${aluno.id}" th:text="${aluno.nome}"></option>
+        </select>
+
+        <label for="professorId">Teacher:</label>
+        <select id="professorId" name="professorId" required onchange="updateSubject()">
+            <option value="">Select a teacher</option>
+            <option th:each="professor : ${professores}"
+                    th:value="${professor.id}"
+                    th:text="${professor.nome}"
+                    th:attr="data-materia=${professor.materia}">
+            </option>
+        </select>
+
+        <label for="materia">Subject:</label>
+        <input type="text" id="materia" name="materia" readonly required>
+
+        <label for="presente">Present?</label>
+        <select id="presente" name="presente" required>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+
+        <button type="submit" class="btn">Register</button>
+    </form>
+
+    <a href="/"><button class="btn-secondary">Back</button></a>
+</div>
+
+<script>
+    function updateSubject() {
+        const professorSelect = document.getElementById("professorId");
+        const subjectInput = document.getElementById("materia");
+
+        // Get the selected option
+        const selectedOption = professorSelect.options[professorSelect.selectedIndex];
+
+        // Get the subject from the "data-materia" attribute
+        const subject = selectedOption.getAttribute("data-materia") || "";
+
+        // Automatically fill in the subject field
+        subjectInput.value = subject;
+    }
+</script>
+
+</body>
+</html>

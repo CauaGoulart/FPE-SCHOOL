@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🔹 Cabeçalho fixo */
+header {
+    background: #8B0000;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 50px;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 12px; /* Reduz a margem para compactar o menu */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px; /* Reduz o tamanho do texto */
+    font-weight: 600;
+    padding: 8px 12px; /* Ajusta o padding para ocupar menos espaço */
+    display: block;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 🔹 Hero/Banner */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    margin-top: 80px;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.escola {
+    margin-top: 100px;
+}
+
+.escola img {
+    height: 350px;
+}
+
+.hero-text {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+/* 🔹 Containers Principais */
+.container, .form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-container {
+    max-width: 400px;
+    text-align: left;
+}
+
+/* 🔹 Formulários */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* 🔹 Ajusta os botões dentro dos formulários */
+form .btn, form .btn-secondary {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* 🔹 Botões principais */
+.btn, .btn-secondary, .btn-danger {
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    max-width: 250px;
+}
+
+/* 🔹 Botão de sucesso (Cadastrar) */
+.btn-success {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* 🔹 Botão de excluir */
+.btn-danger {
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #bd2130;
+}
+
+/* 🔹 Botão principal (Azul - apenas para uso geral, não para "Cadastrar") */
+.btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* 🔹 Botão secundário (Voltar - Branco com tarja preta) */
+.btn-secondary {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+.btn-secondary:hover {
+    background-color: black;
+    color: white;
+}
+
+.button-group button {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px 20px;
+    text-align: center;
+}
+
+/* 🔹 Ajusta a largura da div que contém os botões */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+/* 🔹 Garante que os botões fiquem alinhados corretamente e com espaçamento */
+.button-group .btn,
+.button-group .btn-secondary {
+    width: 48%; /* Para manter espaçamento igual */
+}
+
+/* 🔹 Tabelas */
+.table-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.table {
+    width: 90%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+td {
+    text-align: center;
+}
+
+td a, td button {
+    display: inline-block;
+    margin: 5px;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* 🔹 Grupo de Botões */
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 🔹 Mensagem de Informação */
+.info-message {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 🔹 Estiliza a barra de navegação */
+nav {
+    background-color: #8B0000;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+    display: block;
+}
+
+/* 🔹 Estiliza os dropdowns */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 180px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    text-align: left;
+}
+
+.dropdown-menu li a {
+    color: black;
+    padding: 10px;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* 🔹 Mostra o menu dropdown ao passar o mouse */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.glyphicon {
+    font-size: 10px; /* Ajusta o tamanho dos ícones */
+    vertical-align: middle; /* Mantém alinhado ao centro */
+}

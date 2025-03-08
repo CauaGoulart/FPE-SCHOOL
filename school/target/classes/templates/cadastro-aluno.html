@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Student Registration</h1>
+
+    <form action="/alunos/salvar" method="post">
+        <label for="nome">Name:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="idade">Age:</label>
+        <input type="number" id="idade" name="idade" required>
+
+        <label for="genero">Gender:</label>
+        <input type="text" id="genero" name="genero" required>
+
+        <label for="altura">Height:</label>
+        <input type="number" step="0.01" id="altura" name="altura" required>
+
+        <label for="entidade">Entity:</label>
+        <input type="text" id="entidade" name="entidade" required>
+
+        <label for="talentos">Talents (separated by commas):</label>
+        <input type="text" id="talentos" name="talentos">
+
+        <label for="habilidades">Skills (separated by commas):</label>
+        <input type="text" id="habilidades" name="habilidades">
+
+        <div class="button-group">
+            <button type="submit" class="btn-success">Register</button>
+            <a href="/" class="btn-secondary">Back</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

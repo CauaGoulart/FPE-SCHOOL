@@ -1,0 +1,15 @@
+com\fpe\school\entities\Professor.class
+com\fpe\school\controllers\HomeController.class
+com\fpe\school\repositories\AlunoRepository.class
+com\fpe\school\services\NotaService.class
+com\fpe\school\entities\Aluno.class
+com\fpe\school\config\SecurityConfig.class
+com\fpe\school\controllers\ProfessorController.class
+com\fpe\school\controllers\NotaController.class
+com\fpe\school\repositories\NotaRepository.class
+com\fpe\school\services\AlunoService.class
+com\fpe\school\repositories\ProfessorRepository.class
+com\fpe\school\controllers\AlunoController.class
+com\fpe\school\services\ProfessorService.class
+com\fpe\school\entities\Nota.class
+com\fpe\school\SchoolApplication.class

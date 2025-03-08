@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<!-- 🔹 Updated Header -->
+<header>
+    <div class="logo">
+        <img src="/img/escola-logo.png" alt="School Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Students ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/cadastro-aluno">Register Student</a></li>
+                    <li><a href="/alunos/listar">List Students</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Teachers ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/cadastro-professor">Register Teacher</a></li>
+                    <li><a href="/professores/listar">List Teachers</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Grades ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/notas/cadastro-nota">Register Grade</a></li>
+                    <li><a href="/notas/selecionar">Check Grades</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Attendance ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/presencas/registrar">Register Attendance</a></li>
+                </ul>
+            </li>
+            <li><a href="/contato">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- 🔹 Title -->
+<h1>Teacher List</h1>
+
+<!-- 🔹 Table to display teachers -->
+<div class="table-container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Height</th>
+            <th>Entity</th>
+            <th>Subject</th>
+            <th>Efficiency</th>
+            <th>Skills</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="professor : ${professores}">
+            <td th:text="${professor.nome}"></td>
+            <td th:text="${professor.idade}"></td>
+            <td th:text="${professor.genero}"></td>
+            <td th:text="${professor.altura}"></td>
+            <td th:text="${professor.entidade}"></td>
+            <td th:text="${professor.materia}"></td>
+            <td th:text="${#strings.arrayJoin(professor.eficiencia, ', ')}"></td>
+            <td th:text="${#strings.arrayJoin(professor.habilidades, ', ')}"></td>
+            <td>
+                <a th:href="@{/professores/editar/{id}(id=${professor.id})}" title="Edit">
+                    <button class="btn btn-primary">
+                        <i class="fa fa-pencil"></i> <!-- Edit icon -->
+                    </button>
+                </a>
+
+                <button class="btn btn-danger" title="Delete"
+                        th:attr="onclick=|confirmDeletion('/professores/excluir/${professor.id}')|">
+                    <i class="fa fa-trash"></i> <!-- Delete icon -->
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 🔹 Back Button -->
+<div class="button-group">
+    <a href="/"><button class="btn">Back</button></a>
+</div>
+
+<script>
+    function confirmDeletion(url) {
+        if (confirm("Are you sure you want to delete this teacher?")) {
+            window.location.href = url;
+        }
+    }
+</script>
+
+</body>
+</html>

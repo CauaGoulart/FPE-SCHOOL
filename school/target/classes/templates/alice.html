@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret File - Alice</title>
+    <link rel="stylesheet" href="/css/alice.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="glitch" data-text="⚠ SECRET FILE ⚠">⚠ SECRET FILE ⚠</h1>
+
+    <div class="profile">
+        <img src="/img/alice-profile.png" alt="Image of Alice">
+        <div class="info">
+            <h2>ΔLICE</h2>
+            <p><strong>Age:</strong> Post-adolescent</p>
+            <p><strong>Gender:</strong> Female</p>
+            <p><strong>Height:</strong> 1.70m / 2.60m</p>
+            <p><strong>Entities:</strong> Not identified</p>
+            <p class="warning">⚠ This entity cannot be contained ⚠</p>
+            <p class="red-text" id="special-warning">DO NOT ENTER ROOM 11</p>
+        </div>
+    </div>
+
+    <div class="abilities">
+        <h2>Unique Abilities</h2>
+        <p>Teleportation, Thorn Manipulation, Super Speed, Mind Control, Environment Control, Levitation, Illusion, Metamorphosis, and much more</p>
+    </div>
+
+    <div class="special-event" id="special-event">
+        <!-- Something mysterious appears on the 11th -->
+    </div>
+
+    <a href="/" class="btn">Back</a>
+</div>
+
+<script>
+    // Special event if today is the 11th of the month
+    document.addEventListener("DOMContentLoaded", function() {
+        const today = new Date();
+        const specialEvent = document.getElementById("special-event");
+
+        if (today.getDate() === 11) {
+            specialEvent.innerHTML = "<p class='red-text'>Today is the 11th. Alice is loose...</p>";
+        }
+    });
+</script>
+
+</body>
+</html>
